@@ -15,14 +15,9 @@ express()
       res.send({result: await collection.find().toArray()});
       client.close();
     } catch(err) {
-      console.log('Could not connect to database!');
-      console.log(err);
+      console.log('Could not connect to database!\n', err);
       res.send({error: 'Не удалось получить данные!'});
     }
   })
-  .listen(PORT, function() {
-    console.log(`The server is running on port ${PORT}`);
-  }).on('error', function(error) {
-    console.log('Could not start server!');
-    console.log(error);
-  });
+  .listen(PORT, () => console.log(`The server is running on port ${PORT}`))
+  .on('error', error => console.log('Could not start server!\n', error));
