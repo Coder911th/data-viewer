@@ -7,12 +7,10 @@ const CONNECTION_STRING = 'mongodb+srv://tensor:w1lY2oYqHlaS3auL@super-cluster-2
 express()
   .use(express.static('./client/dist'))
   .get('/api/read-db', async (req, res) => {
-    let client;
     try {
-      client = await MongoClient.connect(CONNECTION_STRING, {
+      const client = await MongoClient.connect(CONNECTION_STRING, {
         useNewUrlParser: true
       });
-
       const collection = client.db('External').collection('Variables');
       res.send({result: await collection.find().toArray()});
       client.close();
