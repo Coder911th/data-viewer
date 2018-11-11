@@ -1,0 +1,29 @@
+{
+  "name": "data-viewer",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "dev-client": "cd client && npm run serve",
+    "build-client": "cd client && npm run build",
+    "start": "node server.js",
+    "dev-server": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Coder911th/data-viewer.git"
+  },
+  "author": "Lozhkin Dmitry",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Coder911th/data-viewer/issues"
+  },
+  "homepage": "https://github.com/Coder911th/data-viewer#readme",
+  "dependencies": {
+    "express": "^4.16.4",
+    "mongodb": "^3.1.9"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.6"
+  }
+}
